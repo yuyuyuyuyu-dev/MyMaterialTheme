@@ -5,14 +5,16 @@ import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.font.FontFamily
+import dev.yuyuyuyuyu.createtypography.createTypographyFrom
+import mymaterialtheme.composeapp.generated.resources.Res
+import mymaterialtheme.composeapp.generated.resources.Yomogi_Regular
+import org.jetbrains.compose.resources.Font
 
 @Composable
-fun MyMaterialTheme(
-    typography: Typography = MaterialTheme.typography,
-    content: @Composable () -> Unit,
-) = MyMaterialTheme(
+fun MyMaterialTheme(content: @Composable () -> Unit) = MyMaterialTheme(
     colorScheme = if (isSystemInDarkTheme()) darkScheme else lightScheme,
-    typography = typography,
+    typography = createTypographyFrom(FontFamily(Font(Res.font.Yomogi_Regular))),
     content = content,
 )
 
