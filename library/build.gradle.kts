@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -11,10 +12,11 @@ plugins {
 }
 
 group = "dev.yuyuyuyuyu"
-version = "0.1.0"
+version = "0.1.1"
 
 kotlin {
-    jvm()
+    jvm("desktop")
+
     androidTarget {
         publishLibraryVariants("release")
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
@@ -22,22 +24,24 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
+
     iosX64()
     iosArm64()
     iosSimulatorArm64()
 
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
+        browser()
+    }
+
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(compose.material3)
-                implementation(compose.components.resources)
-                implementation(libs.createTypography)
-            }
+        commonMain.dependencies {
+            implementation(compose.material3)
+            implementation(compose.components.resources)
+            implementation(libs.createTypography)
         }
-        val commonTest by getting {
-            dependencies {
-                implementation(libs.kotlin.test)
-            }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
         }
     }
 }
@@ -55,11 +59,11 @@ android {
 }
 
 mavenPublishing {
-    publishToMavenCentral()
+    publishToMavenCentral(automaticRelease = true)
 
     signAllPublications()
 
-    coordinates(group.toString(), "library", version.toString())
+    coordinates(group.toString(), "mymaterialtheme", version.toString())
 
     pom {
         name = "MyMaterialTheme"
