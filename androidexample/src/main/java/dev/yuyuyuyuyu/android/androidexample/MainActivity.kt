@@ -8,14 +8,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
-import dev.yuyuyuyuyu.mymaterialtheme.MyMaterialTheme
+import dev.yuyuyuyuyu.mymaterialtheme.MyMaterialDynamicTheme
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -23,7 +18,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MyMaterialTheme {
+            MyMaterialDynamicTheme {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                     topBar = {
