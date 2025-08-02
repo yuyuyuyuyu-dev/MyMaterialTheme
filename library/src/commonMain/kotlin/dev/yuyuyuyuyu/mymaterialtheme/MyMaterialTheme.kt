@@ -11,6 +11,7 @@ import dev.yuyuyuyuyu.library.generated.resources.Res
 import dev.yuyuyuyuyu.library.generated.resources.Yomogi_Regular
 import org.jetbrains.compose.resources.Font
 
+@Suppress("unused")
 @Composable
 fun MyMaterialTheme(content: @Composable () -> Unit) = MyMaterialTheme(
     colorScheme = if (isSystemInDarkTheme()) darkScheme else lightScheme,
