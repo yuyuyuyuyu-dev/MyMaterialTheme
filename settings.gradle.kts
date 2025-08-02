@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyMaterialTheme"
 include(":library")
-include(":androidexample")
+include(":composeApp")
