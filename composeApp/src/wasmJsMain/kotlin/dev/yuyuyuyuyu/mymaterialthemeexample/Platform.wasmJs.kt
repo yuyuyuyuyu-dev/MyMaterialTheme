@@ -1,4 +1,4 @@
-package dev.yuyuyuyuyu.example
+package dev.yuyuyuyuyu.mymaterialthemeexample
 
 class WasmPlatform: Platform {
     override val name: String = "Web with Kotlin/Wasm"
