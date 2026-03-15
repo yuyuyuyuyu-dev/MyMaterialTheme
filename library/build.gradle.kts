@@ -12,7 +12,7 @@ plugins {
 }
 
 group = "dev.yuyuyuyuyu"
-version = "0.3.0"
+version = "0.4.0"
 
 kotlin {
     jvm("desktop")
