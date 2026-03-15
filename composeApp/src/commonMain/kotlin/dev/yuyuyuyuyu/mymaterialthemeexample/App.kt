@@ -14,6 +14,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import dev.yuyuyuyuyu.mymaterialtheme.MyMaterialTheme
 import mymaterialtheme.composeapp.generated.resources.Res
 import mymaterialtheme.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.resources.painterResource
@@ -21,7 +22,7 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
+    MyMaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(
             modifier = Modifier
