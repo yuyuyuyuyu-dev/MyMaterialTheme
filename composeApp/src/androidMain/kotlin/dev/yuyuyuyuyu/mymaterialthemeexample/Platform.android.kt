@@ -1,4 +1,4 @@
-package dev.yuyuyuyuyu.example
+package dev.yuyuyuyuyu.mymaterialthemeexample
 
 import android.os.Build
 

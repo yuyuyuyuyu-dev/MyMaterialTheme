@@ -1,4 +1,4 @@
-package dev.yuyuyuyuyu.example
+package dev.yuyuyuyuyu.mymaterialthemeexample
 
 class JVMPlatform: Platform {
     override val name: String = "Java ${System.getProperty("java.version")}"
